@@ -15,7 +15,7 @@ For example:
 const isNum = (input) => {
   let regex = /[0-9]/g;
   return regex.test(input);
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,9 +25,14 @@ Write a function named isCapitalized that takes in a string. This function shoul
 
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
-
+// second half of this is taken from Trevor's code to valiidate the null portion. It is expecting empty array and we pass it null to satisfy this. 
 const isCapitalized = (str) => {
-  
+  let myRegex = /[A-Z]\w+/g;
+  let match = str.match(myRegex);
+  if (match === null) {
+    return [];
+  }
+  return match;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +42,8 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
