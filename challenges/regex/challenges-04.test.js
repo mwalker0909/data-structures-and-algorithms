@@ -15,6 +15,7 @@ For example:
 const isNum = (input) => {
   let regex = /[0-9]/g;
   return regex.test(input);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,9 +25,14 @@ Write a function named isCapitalized that takes in a string. This function shoul
 
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
-
+// second half of this is taken from Trevor's code to valiidate the null portion. It is expecting empty array and we pass it null to satisfy this. 
 const isCapitalized = (str) => {
-  // Solution code here...
+  let myRegex = /[A-Z]\w+/g;
+  let match = str.match(myRegex);
+  if (match === null) {
+    return [];
+  }
+  return match;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,7 +42,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let cities = [];
+  let aToJ = /^[A-J].+/;
+    arr.forEach( element => {
+      if (aToJ.test(element)) {
+          cities.push(element);
+      }
+    });
+    return cities;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,8 +65,10 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
-};
+  let regex =/\b([Oo]ct)(ober)?\b/;
+  return regex.test(input);
+ }
+ 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -66,8 +81,11 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let regex = /\w+\s/g;
+  return str.match(regex);
+  
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -81,8 +99,9 @@ The function should return a string containing the consonants in their original 
 For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
-let hangman = (str) => {
-  // Solution code here...
+let hangman = str => {
+  let myRegex = /[aeiou]/gi;
+  return str.replace(myRegex, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
