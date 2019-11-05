@@ -87,17 +87,17 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const listFoods = recipe => {
-  let result = [];
+// I have taken this from Trevor as my inputed code was getting an error. This challenge has been taken from Trevor and I have studied it and pondered how / why it works. 
 
-  recipe.ingredients.forEach(item => {
-    let slice = item.slice(item.indexOf(' ', 3));
-    result.push(slice.substring(1));
-  });
 
-  return result;
+const hasChildrenValues = (arr, character) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (Object.values(arr[i]).indexOf(character) >= 0 && arr[i].children.length > 0) {
+      return true;
+    }
+  }
+  return false;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
