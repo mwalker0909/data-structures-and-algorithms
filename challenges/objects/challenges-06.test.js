@@ -96,7 +96,6 @@ const hasChildrenValues = (arr, character) => {
       return true;
     }
   }
-
   return false;
 };
 /* ------------------------------------------------------------------------------------------------
