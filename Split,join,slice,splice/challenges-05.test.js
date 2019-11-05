@@ -141,7 +141,7 @@ For example:
 const removeEvenValues = (arr) => {
   arr.slice().reverse().forEach( (element) => {
     if (element % 2 === 0) {
-      arr.splice(arr.indexOf(element), 1);
+    arr.splice(arr.indexOf(element), 1);
     }
   });
   return arr;
