@@ -100,7 +100,7 @@ const splitFoods = (recipe) => {
     element = element.slice(2);
     element = element.join(' ');
     result.push(element);
-  });
+    });
   return result;
 };
 
