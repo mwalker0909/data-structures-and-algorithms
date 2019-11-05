@@ -98,6 +98,7 @@ const hasChildrenValues = (arr, character) => {
       }
     }
   });
+  
   return hasChildren;
 };
 
