@@ -95,7 +95,12 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(element => {
+    element = element.split(' ');
+    element = element.slice(2);
+    element = element.join(' ');
+    result.push(element);
+  });
   return result;
 };
 
@@ -111,7 +116,10 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach(element => {
+    element = element.split(' ').slice(0, 1).toString();
+    result.push(element);
+  });
   return result;
 };
 
@@ -129,7 +137,12 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  arr.slice().reverse().forEach( (element) => {
+    if (element % 2 === 0) {
+      arr.splice(arr.indexOf(element), 1);
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,7 +161,12 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if(numberOfCharacters < 0 ) {
+    return str;
+  } else {
+    numberOfCharacters = -numberOfCharacters;
+    return str.slice(0, numberOfCharacters);
+  }
 };
 
 
