@@ -87,19 +87,15 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) => {
-  let hasChildren = true;
-  arr.forEach( element => {
-    if (element.name === character){
-      if (Object.values(element)[2].length === 0) {
-        hasChildren = false;
-      } else {
-        hasChildren = true;
-      }
-    }
+const listFoods = recipe => {
+  let result = [];
+
+  recipe.ingredients.forEach(item => {
+    let slice = item.slice(item.indexOf(' ', 3));
+    result.push(slice.substring(1));
   });
 
-  return hasChildren;
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
