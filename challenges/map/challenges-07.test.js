@@ -25,11 +25,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  let twoTo2 = [];
+  let powers = [];
   arr.forEach( (element) => {
-    twoTo2.push(element = Math.pow(2, element));
+    powers.push(element = Math.pow(2, element));
    });
-  return twoTo2;
+  return powers;
 };
 
 /* ------------------------------------------------------------------------------------------------
