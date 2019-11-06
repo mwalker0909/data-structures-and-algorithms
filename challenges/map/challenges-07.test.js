@@ -70,8 +70,18 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  let newArray = arr.map(element => {
+    if (element % 2 === 0) {
+      return element = 'even';
+    } else if(element % 2 === 1){
+      return element = 'odd';
+    } else {
+      return element = 'N/A';
+    }
+  });
+  return newArray;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -116,9 +126,15 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  let newArray = [];
+  newArray = arr.map(obj => {
+    let object = {};
+    object['name'] = obj.stat.name;
+    object['total'] = obj.effort + obj.baseStat;
+      return object
+  });
+  return newArray;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
 
@@ -163,7 +179,10 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  let newArray = [];
+  newArray = arr.map(obj => {
+    let 
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
