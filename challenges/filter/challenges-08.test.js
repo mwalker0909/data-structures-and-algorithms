@@ -24,6 +24,10 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 ------------------------------------------------------------------------------------------------ */
 
 
+const filterStringsWithVowels = (arr) => {
+  let output = arr.filter(element => /[aeiou]/.test(element));
+  return filterStringsWithVowels;
+};
 
 
 /* ------------------------------------------------------------------------------------------------
