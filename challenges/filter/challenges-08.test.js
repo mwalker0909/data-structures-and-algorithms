@@ -1,5 +1,7 @@
 'use strict';
 
+import { interfaceDeclaration } from "@babel/types";
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -85,7 +87,10 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  let newArray = arr.filter( element => {
+    return.element.baseStat > minBaseStat;
+  })
+   return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
