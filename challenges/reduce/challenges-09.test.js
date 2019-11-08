@@ -84,16 +84,7 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
-const reversedString = (arr) => {
-  let splitArray = arr.split('');
-  let reverseArray = splitArray.reverse();
-  let joinArray = reverseArray.join('');
-  joinArray = joinArray.reduce((accumulator, currentValues) => {
-    accumulator = currentValues + accumulator;
-    return accumulator;
-  });
-  return joinArray;
-};
+const reversedString = (str) => str.split('').reduce((accumulator ,currentValues) => currentValues + accumulator);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -200,6 +191,7 @@ const countPrimeNumbers = (arr) => {
       return accumulator;
     }
   }, 0);
+  
   return sumPrimeNumbers;
 };
 
