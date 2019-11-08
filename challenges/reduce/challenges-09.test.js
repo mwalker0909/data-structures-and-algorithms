@@ -9,7 +9,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  return arr.reduce( (arr) => {return arr + 1 });
+  return arr.reduce( (accumulator) => {return accumulator + 1 });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,9 +69,9 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  let names = arr.reduce ( (arrStarWarsData, arrActualNames) => {
-    arrStarWarsData.push(arrActualNames.name);
-      return arrStarWarsData;
+  let names = arr.reduce ( (accumulator, currentValues) => {
+    accumulator.push(currentValues.name);
+      return accumulator;
   }, []);
   return names;
 };
@@ -85,7 +85,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
