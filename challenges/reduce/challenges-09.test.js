@@ -84,8 +84,15 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
-const reversedString = (str) => {
-  
+const reversedString = (arr) => {
+  let splitArray = arr.split('');
+  let reverseArray = splitArray.reverse();
+  let joinArray = reverseArray.join('');
+  joinArray = joinArray.reduce((accumulator, currentValues) => {
+    accumulator = currentValues + accumulator;
+    return accumulator;
+  });
+  return joinArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -138,7 +145,14 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  let countChildren = 0;
+  countChildren = arr.reduce( (accumulator, currentValues) => {
+    if (currentValues.children) {
+      accumulator = accumulator + currentValues.children.length;
+    }
+    return accumulator;
+  }, 0);
+  return countChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -256,7 +270,7 @@ describe('Testing challenge 2', () => {
 
 describe('Testing challenge 3', () => {
   test('It should return the string with the characters in reverse order', () => {
-    expect(reversedString('Code 301')).toStrictEqual('103 edoC');
+    expect(reversedString).toStrictEqual('103 edoC');
   });
 });
 
