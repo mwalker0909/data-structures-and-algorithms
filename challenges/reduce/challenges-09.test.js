@@ -164,8 +164,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let average = arr.reduce( (accumulator, currentValues) => {
+    accumulator += currentValues;
+    accumulator ++; 
+    return accumulator;
+  }, {count:0, sum:0});
+  return average.sum % average.count;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -185,7 +191,16 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  let sumPrimeNumbers = 0;
+  sumPrimeNumbers = arr.reduce( (accumulator, currentValues) => {
+    if (isPrime(currentValues)) {  
+      accumulator = accumulator + 1;
+      return accumulator;
+    } else {
+      return accumulator;
+    }
+  }, 0);
+  return sumPrimeNumbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -228,7 +243,7 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
