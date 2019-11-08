@@ -85,7 +85,10 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  let newArray = arr.filter(element => {
+    return element.baseStat > minBaseStat;
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,7 +100,13 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let newArray = arr.filter(element => {
+    return element.baseStat > minBaseStat;
+  });
+  newArray = newArray.map(element => {
+    return element = element.stat.name;
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -150,7 +159,11 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  let newArray = arr.filter(element => {
+    if (!element.children)
+    return element;
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -161,9 +174,9 @@ Write a function named evenOddNumericValues that, given an array as input, uses 
 For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
 ------------------------------------------------------------------------------------------------ */
 
-const evenOddNumericValues = (arr) => {
-  // Solution code here...
-};
+//THIS IS TAKEN FROM TRAVIS IN CODE REVIEW. PRIOR HOLLY WAS ATTEMPTING TO SOLVE, AND WE COVERED THIS IN CODE REVIEW FROM TRAVIS
+const evenOddNumericValues = (arr) => arr.filter(item => typeof(item) === 'number').map(num => num % 2 === 0 ? 'even' : 'odd');
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
